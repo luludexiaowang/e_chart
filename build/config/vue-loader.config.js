@@ -7,8 +7,31 @@ module.exports = (isDev) => {
       camelCase: true
     },
     loaders: {
-      less: 'vue-style-loader?sourceMap!css-loader?sourceMap!less-loader?sourceMap'.split('!'),
-      css: 'vue-style-loader?sourceMap!css-loader?sourceMap'.split('!')
+      less: [
+        {
+          loader: 'style-loader'
+        }, {
+          loader: 'css-loader',
+          options: {
+            sourceMap: true
+          }
+        }, {
+          loader: 'less-loader',
+          options: {
+            sourceMap: true
+          }
+        }
+      ],
+      css: [
+        {
+          loader: 'style-loader'
+        }, {
+          loader: 'css-loader',
+          options: {
+            sourceMap: true
+          }
+        }
+      ]
     }
     // hotReload: false, // 根据环境变量生成
   }

@@ -38,6 +38,28 @@ let config
 if (isDev) {
   config = merge(base, {
     devtool: '#cheap-module-eval-source-map',
+    module: {
+      rules: [
+        {
+          test: /\.less$/,
+          use: [
+            {
+              loader: 'style-loader'
+            }, {
+              loader: 'css-loader',
+              options: {
+                sourceMap: true
+              }
+            }, {
+              loader: 'less-loader',
+              options: {
+                sourceMap: true
+              }
+            }
+          ]
+        }
+      ]
+    },
     devServer,
     plugins: defaultPluins.concat([
       new webpack.HotModuleReplacementPlugin(),
@@ -48,6 +70,28 @@ if (isDev) {
   config = merge(base, {
     output: {
       filename: '[name].[chunkhash:8].js'
+    },
+    module: {
+      rules: [
+        {
+          test: /\.less$/,
+          use: [
+            {
+              loader: 'style-loader'
+            }, {
+              loader: 'css-loader',
+              options: {
+                sourceMap: true
+              }
+            }, {
+              loader: 'less-loader',
+              options: {
+                sourceMap: true
+              }
+            }
+          ]
+        }
+      ]
     },
     optimization: {
       splitChunks: {

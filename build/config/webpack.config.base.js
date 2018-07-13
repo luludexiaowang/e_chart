@@ -12,6 +12,13 @@ module.exports = {
     filename: '[name].[hash:8].js',
     path: path.resolve(__dirname, '../../dist')
   },
+  resolve: {
+    extensions: ['.js', '.vue', '.json', '.less'],
+    alias: {
+      'src': path.resolve(__dirname, '../../src'),
+      'style': path.resolve(__dirname, '../../src/client/style')
+    }
+  },
   module: {
     rules: [
       {
@@ -37,13 +44,15 @@ module.exports = {
       {
         test: /\.css$/,
         use: [
-          'style-loader',
-          'css-loader'
+          {
+            loader: 'style-loader'
+          }, {
+            loader: 'css-loader',
+            options: {
+              sourceMap: true
+            }
+          }
         ]
-      },
-      {
-        test: /\.less$/,
-        use: 'style-loader?sourceMap!css-loader?sourceMap!less-loader?sourceMap'.split('!')
       },
       {
         test: /\.(gif|jpg|jpeg|png|svg)$/,

@@ -1,4 +1,4 @@
-import Index from '../view/home/index.vue' // 首页模版
+import Index from 'src/client/view/home/index.vue' // 首页模版
 
 const routes = [
   {
