@@ -2,7 +2,7 @@
   <div :class="$style.root">
     <div :class="$style.content">
         <img :class="$style.logo"/>
-        <h1 :class="$style.brandName">鲸准投资管理系统</h1>
+        <h1 :class="$style.brandName"></h1>
         <div :class="$style.loginForm">
           <form>
             <div :class="$style.mobilePhone" class="clearfix">
