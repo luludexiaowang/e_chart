@@ -1,9 +1,9 @@
 import Vue from 'vue'
-import App from '../client/view/App.vue'
+import App from 'client/views/app.vue'
 import ElementUI from 'element-ui'
-import '../client/style/element-theme/index.css'
-import '../client/asset/iconfont/iconfont.css'
-import router from '../client/router/index.js'
+import 'client/assets/styles/element-theme/index.css'
+import 'client/assets/styles/global.styl'
+import router from 'client/router/index.js'
 
 Vue.config.productionTip = false
 
