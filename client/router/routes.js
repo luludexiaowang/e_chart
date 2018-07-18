@@ -1,5 +1,6 @@
 import Index from 'client/views/app.vue'
 import Home from 'client/views/home/index.vue'
+import Login from 'client/views/login/index.vue'
 
 const routes = [
   {
@@ -13,6 +14,13 @@ const routes = [
       {
         path: 'home/index',
         component: Home,
+        meta: {
+          always: true
+        }
+      },
+      {
+        path: 'login',
+        component: Login,
         meta: {
           always: true
         }
